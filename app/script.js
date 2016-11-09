@@ -16,7 +16,7 @@ var setCookie = function() {
 // Showing captcha while page loading
 var showCaptcha = function() {
     vg1 = grecaptcha.render(document.getElementById('html_element'), {
-        'sitekey': '6Ld0ygkUAAAAANdPiQx0Szl-JfbcpzPD8t5Aeg_e',
+        'sitekey': '<your-site-key>',
         'callback': loadPage
     });
 };
@@ -56,7 +56,7 @@ var init = function() {
 // Calling REST service for revature signup
 $("#submit").click(function() {
     event.preventDefault();
-    var url = "http://localhost:8080/resources/interns/signup";
+    var url = "<REST_url>";
     var data = {
         fullName: Base64.encode($('#fname').val()),
         email: Base64.encode($('#email').val())
@@ -67,7 +67,7 @@ $("#submit").click(function() {
         posting.done(function(data) {
             console.log('success');
             setTimeout(function() {
-                window.open('http://localhost/revatureApp', '_blank');
+                window.open('<redirect-url>', '_blank');
             }, 1000);
 
         });

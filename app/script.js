@@ -1,6 +1,5 @@
 //Load the page if the user is already verified by captcha
 var loadPage = function() {
-    //$('#formBody').css('display', 'block');
     $('#formBody').removeClass('hide-form');
     if (!cookies.isNotRobot) {
         setCookie();
@@ -21,7 +20,7 @@ var showCaptcha = function() {
     });
 };
 
-// overriding postman default properties
+// overriding post method default properties
 $.postJSON = function(url, data, callback) {
     return jQuery.ajax({
         'type': 'POST',
@@ -36,7 +35,6 @@ $.postJSON = function(url, data, callback) {
 
 // init method.
 var init = function() {
-    // $('#formBody').css('display', 'none');
     $('#formBody').addClass('hide-form');
     var c = document.cookie;
     cookies = {};
